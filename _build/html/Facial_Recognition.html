@@ -1,0 +1,3169 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Facial Recognition &#8212; Facial Recognition System</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Facial_Recognition';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.webp" class="logo__image only-light" alt="Facial Recognition System - Home"/>
+    <script>document.write(`<img src="_static/logo.webp" class="logo__image only-dark" alt="Facial Recognition System - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Facial Recognition</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FabioScielzoOrtiz/Facial_Recognition" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FabioScielzoOrtiz/Facial_Recognition/issues/new?title=Issue%20on%20page%20%2FFacial_Recognition.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Facial_Recognition.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Facial Recognition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements"><strong>Requirements</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data"><strong>Data</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images-of-people-of-our-database-in-people"><strong>Images of people of our database (IN people)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images-of-external-people-out-people"><strong>Images of external people (OUT people)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-validate-test-split"><strong>Train-Validate-Test split</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#face-recognition-kkn-algorithm"><strong>Face Recognition - KKN Algorithm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-functionality-of-the-algorithm"><strong>Testing the functionality of the algorithm</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tunning"><strong>Hyperparameter tunning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-of-future-performance"><strong>Estimation of future performance</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained-algorithm"><strong>Pre-trained algorithm</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#face-recognition-pca-kkn-algorithm"><strong>Face Recognition - PCA-KKN Algorithm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Testing the functionality of the algorithm</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Hyperparameter tunning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Estimation of future performance</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Pre-trained algorithm</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#face-recognition-fisher-pca-kkn-algorithm"><strong>Face Recognition - Fisher-PCA-KKN Algorithm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Testing the functionality of the algorithm</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Hyperparameter tunning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>Estimation of future performance</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Pre-trained algorithm</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="facial-recognition">
+<h1><strong>Facial Recognition</strong><a class="headerlink" href="#facial-recognition" title="Link to this heading">#</a></h1>
+<section id="requirements">
+<h2><strong>Requirements</strong><a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="nn">pl</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span>  <span class="n">product</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+<span class="kn">import</span> <span class="nn">joblib</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">ConfusionMatrixDisplay</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">FacialRecognition</span> <span class="kn">import</span> <span class="n">FacialRecognitionKnn</span><span class="p">,</span> <span class="n">RandomSearchFacialRecognitionKnn</span><span class="p">,</span> <span class="n">FacialRecognitionKnnPca</span><span class="p">,</span> <span class="n">RandomSearchFacialRecognitionKnnPca</span><span class="p">,</span> <span class="n">FacialRecognitionKnnPcaFisher</span><span class="p">,</span> <span class="n">RandomSearchFacialRecognitionKnnPcaFisher</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_images</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">image_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">convert_to_gray</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">):</span>
+
+    <span class="c1"># image_size = (width, height)</span>
+    <span class="n">images_list</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+    
+        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.jpeg&#39;</span><span class="p">):</span>
+    
+            <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
+    
+            <span class="k">if</span> <span class="n">image_size</span> <span class="o">==</span> <span class="kc">None</span> <span class="p">:</span>
+                <span class="n">image_size</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span>
+
+            <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">convert_to_gray</span> <span class="o">==</span> <span class="kc">True</span> <span class="p">:</span>
+                <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>  <span class="c1"># Convert to grayscale</span>
+            
+            <span class="n">img_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+            <span class="n">img_vector</span> <span class="o">=</span> <span class="n">img_array</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="c1"># image as an observation (1D array)</span>
+            <span class="n">images_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img_vector</span><span class="p">)</span>
+            <span class="n">images_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">images_list</span><span class="p">)</span>
+
+    <span class="k">if</span>  <span class="n">output</span> <span class="o">==</span> <span class="s1">&#39;numpy&#39;</span> <span class="p">:</span>
+    
+        <span class="n">images_dataset</span> <span class="o">=</span> <span class="n">images_array</span>
+
+    <span class="k">elif</span> <span class="n">output</span> <span class="o">==</span> <span class="s1">&#39;polars&#39;</span> <span class="p">:</span>
+        
+        <span class="n">width</span> <span class="o">=</span> <span class="n">image_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="n">image_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
+        <span class="n">images_dataset</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">images_array</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">convert_to_gray</span> <span class="o">==</span> <span class="kc">True</span> <span class="p">:</span>
+            <span class="n">images_dataset</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;pixel_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">height</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">width</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> 
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">height</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">width</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="p">:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">channel</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]]</span>
+            <span class="n">images_dataset</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">x</span> 
+    
+    <span class="k">return</span> <span class="n">images_dataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data">
+<h2><strong>Data</strong><a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
+<section id="images-of-people-of-our-database-in-people">
+<h3><strong>Images of people of our database (IN people)</strong><a class="headerlink" href="#images-of-people-of-our-database-in-people" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\fscielzo\Documents\Large-Data\Face_Recognition_Data\IN_images&quot;</span>
+<span class="n">X_IN</span> <span class="o">=</span> <span class="n">load_images</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="n">folder</span><span class="p">,</span> <span class="n">image_size</span><span class="o">=</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">convert_to_gray</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+
+<span class="n">n_images_per_person</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">n_people_db</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="n">Y_IN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_people_db</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n_images_per_person</span><span class="p">)</span>
+    <span class="n">Y_IN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">Y_IN</span><span class="p">,</span> <span class="n">arr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_images</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_IN</span><span class="p">)</span> 
+<span class="n">height</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="c1"># This is critical, if it is incorrect, images will be distorted.</span>
+<span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span> 
+<span class="n">n_cols</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">n_rows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">n_images</span><span class="o">/</span><span class="n">n_cols</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_images</span><span class="p">):</span>
+        <span class="n">image_vector</span> <span class="o">=</span> <span class="n">X_IN</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">reshaped_image</span> <span class="o">=</span> <span class="n">image_vector</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reshaped_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_images</span><span class="p">,</span> <span class="n">n_rows</span> <span class="o">*</span> <span class="n">n_cols</span><span class="p">):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">delaxes</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5673bd41b5cb8947e795a216f91e0d83e295650828fb73bc83905fb811147c0a.png" src="_images/5673bd41b5cb8947e795a216f91e0d83e295650828fb73bc83905fb811147c0a.png" />
+</div>
+</div>
+</section>
+<section id="images-of-external-people-out-people">
+<h3><strong>Images of external people (OUT people)</strong><a class="headerlink" href="#images-of-external-people-out-people" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\fscielzo\Documents\Large-Data\Face_Recognition_Data\OUT_Images&quot;</span>
+<span class="n">X_OUT</span> <span class="o">=</span> <span class="n">load_images</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="n">folder</span><span class="p">,</span> <span class="n">image_size</span><span class="o">=</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">convert_to_gray</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">Y_OUT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_OUT</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_images</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_OUT</span><span class="p">)</span> 
+<span class="n">height</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span> 
+<span class="n">n_cols</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n_rows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">n_images</span><span class="o">/</span><span class="n">n_cols</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_images</span><span class="p">):</span>
+        <span class="n">image_vector</span> <span class="o">=</span> <span class="n">X_OUT</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">reshaped_image</span> <span class="o">=</span> <span class="n">image_vector</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reshaped_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_images</span><span class="p">,</span> <span class="n">n_rows</span> <span class="o">*</span> <span class="n">n_cols</span><span class="p">):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">delaxes</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/19d36b6dc8f3f6d0fcb49713d98c3ec193fcbc6aa38622d925a7fff7b71ab0e7.png" src="_images/19d36b6dc8f3f6d0fcb49713d98c3ec193fcbc6aa38622d925a7fff7b71ab0e7.png" />
+</div>
+</div>
+<p><strong>OUT people:</strong></p>
+<ul class="simple">
+<li><p>45 images of 39 people (one person has 3 images, another 4, and the rest 1).</p></li>
+</ul>
+</section>
+<section id="train-validate-test-split">
+<h3><strong>Train-Validate-Test split</strong><a class="headerlink" href="#train-validate-test-split" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">X_IN_test</span><span class="p">,</span> <span class="n">Y_IN_train</span><span class="p">,</span> <span class="n">Y_IN_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_IN</span><span class="p">,</span> <span class="n">Y_IN</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.80</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">Y_IN</span><span class="p">)</span> 
+<span class="n">X_IN_val</span><span class="p">,</span> <span class="n">X_IN_test</span><span class="p">,</span> <span class="n">Y_IN_val</span><span class="p">,</span> <span class="n">Y_IN_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_IN_test</span><span class="p">,</span> <span class="n">Y_IN_test</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span> 
+<span class="n">X_OUT_val</span><span class="p">,</span> <span class="n">X_OUT_test</span><span class="p">,</span> <span class="n">Y_OUT_val</span><span class="p">,</span> <span class="n">Y_OUT_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_OUT</span><span class="p">,</span> <span class="n">Y_OUT</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">X_val</span><span class="p">,</span> <span class="n">Y_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X_IN_val</span><span class="p">,</span> <span class="n">X_OUT_val</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">Y_IN_val</span><span class="p">,</span> <span class="n">Y_OUT_val</span><span class="p">))</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X_IN_test</span><span class="p">,</span> <span class="n">X_OUT_test</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">Y_IN_test</span><span class="p">,</span> <span class="n">Y_OUT_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number of images</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_IN</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_OUT</span><span class="p">)</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>185
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proportion of train images</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">X_IN_train</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6486486486486487
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proportion of validate images</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.17297297297297298
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proportion of test images</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1783783783783784
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proportion of IN images in validate set</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.46875
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proportion of OUT images in validate set</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.53125
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proportion of IN images in test set</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_test</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45454545454545453
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proportion of OUT images in test set</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_test</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5454545454545454
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="face-recognition-kkn-algorithm">
+<h2><strong>Face Recognition - KKN Algorithm</strong><a class="headerlink" href="#face-recognition-kkn-algorithm" title="Link to this heading">#</a></h2>
+<section id="testing-the-functionality-of-the-algorithm">
+<h3><strong>Testing the functionality of the algorithm</strong><a class="headerlink" href="#testing-the-functionality-of-the-algorithm" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facial_recognition_knn</span> <span class="o">=</span> <span class="n">FacialRecognitionKnn</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">threshold_dist</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">facial_recognition_knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_IN_train</span><span class="p">)</span>
+<span class="n">Y_val_hat</span> <span class="o">=</span> <span class="n">facial_recognition_knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_val</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([17., 19., 12., 16., 23.,  7.,  6., 24.,  5., 22., 15.,  2.,  7.,
+        3.,  4.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.,  0.,  0.,  0.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_val_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General accuracy</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.53125
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accuracy for IN images</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accuracy for OUT images</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hyperparameter-tunning">
+<h3><strong>Hyperparameter tunning</strong><a class="headerlink" href="#hyperparameter-tunning" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_grid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span><span class="s1">&#39;cityblock&#39;</span><span class="p">,</span><span class="s1">&#39;manhattan&#39;</span><span class="p">]</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;threshold_dist&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">FR_knn_random_search</span> <span class="o">=</span> <span class="n">RandomSearchFacialRecognitionKnn</span><span class="p">(</span><span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">FR_knn_random_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="o">=</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="o">=</span><span class="n">Y_IN_train</span><span class="p">,</span> <span class="n">X_test</span><span class="o">=</span><span class="n">X_val</span><span class="p">,</span> <span class="n">Y_test</span><span class="o">=</span><span class="n">Y_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_random_search_results</span> <span class="o">=</span> <span class="n">FR_knn_random_search</span><span class="o">.</span><span class="n">results</span>
+<span class="n">FR_knn_random_search_results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>combination</th>
+      <th>accuracy</th>
+      <th>accuracy_IN</th>
+      <th>accuracy_OUT</th>
+      <th>n_neighbors</th>
+      <th>metric</th>
+      <th>threshold_dist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(3, euclidean, 5700)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.0</td>
+      <td>3</td>
+      <td>euclidean</td>
+      <td>5700</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>(6, euclidean, 6800)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>euclidean</td>
+      <td>6800</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>(3, euclidean, 5000)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.0</td>
+      <td>3</td>
+      <td>euclidean</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>(5, euclidean, 7100)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>euclidean</td>
+      <td>7100</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>(1, euclidean, 2700)</td>
+      <td>0.938</td>
+      <td>0.867</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>euclidean</td>
+      <td>2700</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>(11, euclidean, 1600)</td>
+      <td>0.656</td>
+      <td>0.267</td>
+      <td>1.0</td>
+      <td>11</td>
+      <td>euclidean</td>
+      <td>1600</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>(1, manhattan, 4700)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>manhattan</td>
+      <td>4700</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>(12, manhattan, 8000)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>12</td>
+      <td>manhattan</td>
+      <td>8000</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>(6, manhattan, 2900)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>manhattan</td>
+      <td>2900</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>(4, manhattan, 1900)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>4</td>
+      <td>manhattan</td>
+      <td>1900</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>(2, manhattan, 1900)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>manhattan</td>
+      <td>1900</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>(29, cityblock, 9600)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>29</td>
+      <td>cityblock</td>
+      <td>9600</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>(13, manhattan, 6800)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>13</td>
+      <td>manhattan</td>
+      <td>6800</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>(3, manhattan, 4400)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>3</td>
+      <td>manhattan</td>
+      <td>4400</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>(18, cityblock, 5500)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>18</td>
+      <td>cityblock</td>
+      <td>5500</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>(4, cityblock, 3500)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>4</td>
+      <td>cityblock</td>
+      <td>3500</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>(18, manhattan, 4700)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>18</td>
+      <td>manhattan</td>
+      <td>4700</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(11, manhattan, 8500)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>11</td>
+      <td>manhattan</td>
+      <td>8500</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>(7, cityblock, 8300)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>cityblock</td>
+      <td>8300</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>(14, cityblock, 6800)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>14</td>
+      <td>cityblock</td>
+      <td>6800</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>(14, manhattan, 2400)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>14</td>
+      <td>manhattan</td>
+      <td>2400</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>(6, cityblock, 1200)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>cityblock</td>
+      <td>1200</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>(7, cityblock, 1500)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>cityblock</td>
+      <td>1500</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(4, cityblock, 2800)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>4</td>
+      <td>cityblock</td>
+      <td>2800</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>(17, cityblock, 7200)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>17</td>
+      <td>cityblock</td>
+      <td>7200</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>(14, manhattan, 8300)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>14</td>
+      <td>manhattan</td>
+      <td>8300</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>(14, cityblock, 4200)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>14</td>
+      <td>cityblock</td>
+      <td>4200</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>(23, manhattan, 9000)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>23</td>
+      <td>manhattan</td>
+      <td>9000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>(24, euclidean, 1300)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>24</td>
+      <td>euclidean</td>
+      <td>1300</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>(22, manhattan, 8500)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>22</td>
+      <td>manhattan</td>
+      <td>8500</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>(16, cityblock, 1100)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>16</td>
+      <td>cityblock</td>
+      <td>1100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>(11, manhattan, 6700)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>11</td>
+      <td>manhattan</td>
+      <td>6700</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>(2, cityblock, 2500)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>cityblock</td>
+      <td>2500</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>(5, cosine, 6400)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.0</td>
+      <td>5</td>
+      <td>cosine</td>
+      <td>6400</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>(1, cosine, 800)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>cosine</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>(24, cosine, 9400)</td>
+      <td>0.250</td>
+      <td>0.533</td>
+      <td>0.0</td>
+      <td>24</td>
+      <td>cosine</td>
+      <td>9400</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>(16, cosine, 8600)</td>
+      <td>0.250</td>
+      <td>0.533</td>
+      <td>0.0</td>
+      <td>16</td>
+      <td>cosine</td>
+      <td>8600</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>(25, cosine, 9100)</td>
+      <td>0.219</td>
+      <td>0.467</td>
+      <td>0.0</td>
+      <td>25</td>
+      <td>cosine</td>
+      <td>9100</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>(19, cosine, 4500)</td>
+      <td>0.219</td>
+      <td>0.467</td>
+      <td>0.0</td>
+      <td>19</td>
+      <td>cosine</td>
+      <td>4500</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>(28, cosine, 3000)</td>
+      <td>0.188</td>
+      <td>0.400</td>
+      <td>0.0</td>
+      <td>28</td>
+      <td>cosine</td>
+      <td>3000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_random_search</span><span class="o">.</span><span class="n">best_params_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n_neighbors&#39;: 3, &#39;metric&#39;: &#39;euclidean&#39;, &#39;threshold_dist&#39;: 5700}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_random_search</span><span class="o">.</span><span class="n">best_score_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="estimation-of-future-performance">
+<h3><strong>Estimation of future performance</strong><a class="headerlink" href="#estimation-of-future-performance" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_facial_recognition_knn</span> <span class="o">=</span> <span class="n">FacialRecognitionKnn</span><span class="p">()</span>
+<span class="n">best_facial_recognition_knn</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="n">FR_knn_random_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="n">best_facial_recognition_knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_IN_train</span><span class="p">)</span>
+<span class="n">Y_test_hat</span> <span class="o">=</span> <span class="n">best_facial_recognition_knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_test_hat</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pre-trained-algorithm">
+<h3><strong>Pre-trained algorithm</strong><a class="headerlink" href="#pre-trained-algorithm" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Saving the pre-trained model:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_facial_recognition_knn</span><span class="p">,</span> <span class="s2">&quot;facial_recognition_knn.joblib&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;facial_recognition_knn.joblib&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Loading the pre-trained model</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretrained_model</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;facial_recognition_knn.joblib&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Loading new images:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\fscielzo\Documents\Large-Data\Face_Recognition_Data\New_image&quot;</span>
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">load_images</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="n">folder</span><span class="p">,</span> <span class="n">image_size</span><span class="o">=</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">convert_to_gray</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+
+<span class="n">X_new_1</span> <span class="o">=</span> <span class="n">X_new</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="c1"># X_new_1 is an IN person image. Concretely is the person 3 of our initial IN images data base.</span>
+<span class="n">Y_new_1</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">X_new_2</span> <span class="o">=</span> <span class="n">X_new</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="c1"># X_new_2 is an OUT person image.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">reshaped_image</span> <span class="o">=</span> <span class="n">X_new_1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reshaped_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3d69f52fd333f0bd4b582fcfa11d0f56fe104dfeeeb3bc0b62a86c77a2defc99.png" src="_images/3d69f52fd333f0bd4b582fcfa11d0f56fe104dfeeeb3bc0b62a86c77a2defc99.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_1_hat</span> <span class="o">=</span> <span class="n">pretrained_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new_1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">Y_new_1_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">reshaped_image</span> <span class="o">=</span> <span class="n">X_new_2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reshaped_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2a3c9866a8d358817dcde51ba80e5e1f79453f7b6817c00283e85ff4f4d14300.png" src="_images/2a3c9866a8d358817dcde51ba80e5e1f79453f7b6817c00283e85ff4f4d14300.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_2_hat</span> <span class="o">=</span> <span class="n">pretrained_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new_2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">Y_new_2_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="face-recognition-pca-kkn-algorithm">
+<h2><strong>Face Recognition - PCA-KKN Algorithm</strong><a class="headerlink" href="#face-recognition-pca-kkn-algorithm" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3><strong>Testing the functionality of the algorithm</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facial_recognition_knn_pca</span> <span class="o">=</span> <span class="n">FacialRecognitionKnnPca</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">threshold_dist</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">facial_recognition_knn_pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_IN_train</span><span class="p">)</span>
+<span class="n">Y_val_hat</span> <span class="o">=</span> <span class="n">facial_recognition_knn_pca</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_val</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([17., 19., 12., 16., 23.,  7.,  6., 24.,  5., 22., 15.,  2.,  7.,
+        3.,  4.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.,  0.,  0.,  0.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_val_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General accuracy</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.53125
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accuracy for IN images</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accuracy for OUT images</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3><strong>Hyperparameter tunning</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_grid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span><span class="s1">&#39;cityblock&#39;</span><span class="p">,</span><span class="s1">&#39;manhattan&#39;</span><span class="p">]</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;n_components&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;threshold_dist&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> 
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="n">FR_knn_pca_random_search</span> <span class="o">=</span> <span class="n">RandomSearchFacialRecognitionKnnPca</span><span class="p">(</span><span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">FR_knn_pca_random_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="o">=</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="o">=</span><span class="n">Y_IN_train</span><span class="p">,</span> <span class="n">X_test</span><span class="o">=</span><span class="n">X_val</span><span class="p">,</span> <span class="n">Y_test</span><span class="o">=</span><span class="n">Y_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_pca_random_search</span><span class="o">.</span><span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>combination</th>
+      <th>accuracy</th>
+      <th>accuracy_IN</th>
+      <th>accuracy_OUT</th>
+      <th>metric</th>
+      <th>n_components</th>
+      <th>threshold_dist</th>
+      <th>n_neighbors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12</th>
+      <td>(cityblock, 31, 415, 2)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>31</td>
+      <td>415</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>(cityblock, 10, 55, 4)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>10</td>
+      <td>55</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>(manhattan, 19, 85, 7)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>19</td>
+      <td>85</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>(manhattan, 58, 210, 10)</td>
+      <td>0.906</td>
+      <td>0.800</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>58</td>
+      <td>210</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>(cityblock, 34, 415, 9)</td>
+      <td>0.906</td>
+      <td>0.800</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>34</td>
+      <td>415</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>(euclidean, 28, 110, 11)</td>
+      <td>0.812</td>
+      <td>0.600</td>
+      <td>1.000</td>
+      <td>euclidean</td>
+      <td>28</td>
+      <td>110</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>(manhattan, 46, 395, 18)</td>
+      <td>0.719</td>
+      <td>0.400</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>46</td>
+      <td>395</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>(manhattan, 34, 205, 24)</td>
+      <td>0.688</td>
+      <td>0.333</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>34</td>
+      <td>205</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>(cityblock, 31, 350, 23)</td>
+      <td>0.688</td>
+      <td>0.333</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>31</td>
+      <td>350</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>(manhattan, 28, 460, 24)</td>
+      <td>0.656</td>
+      <td>0.267</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>28</td>
+      <td>460</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>(euclidean, 37, 100, 25)</td>
+      <td>0.656</td>
+      <td>0.267</td>
+      <td>1.000</td>
+      <td>euclidean</td>
+      <td>37</td>
+      <td>100</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>(cityblock, 25, 230, 29)</td>
+      <td>0.625</td>
+      <td>0.200</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>25</td>
+      <td>230</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>(manhattan, 28, 250, 28)</td>
+      <td>0.625</td>
+      <td>0.200</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>28</td>
+      <td>250</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>(manhattan, 10, 210, 26)</td>
+      <td>0.594</td>
+      <td>0.267</td>
+      <td>0.882</td>
+      <td>manhattan</td>
+      <td>10</td>
+      <td>210</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>(manhattan, 58, 35, 28)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>58</td>
+      <td>35</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>(manhattan, 52, 10, 12)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>52</td>
+      <td>10</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>(cityblock, 43, 5, 29)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>43</td>
+      <td>5</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>(cosine, 43, 65, 8)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>43</td>
+      <td>65</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>(cosine, 7, 80, 5)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>7</td>
+      <td>80</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>(euclidean, 37, 425, 6)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>37</td>
+      <td>425</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>(cosine, 31, 240, 8)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>31</td>
+      <td>240</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>(euclidean, 43, 215, 8)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>43</td>
+      <td>215</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>(euclidean, 13, 345, 5)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>13</td>
+      <td>345</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>(euclidean, 34, 205, 7)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>34</td>
+      <td>205</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>(cosine, 43, 135, 3)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>43</td>
+      <td>135</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>(cosine, 49, 405, 7)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>49</td>
+      <td>405</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(euclidean, 22, 440, 4)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>22</td>
+      <td>440</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>(euclidean, 13, 365, 10)</td>
+      <td>0.406</td>
+      <td>0.867</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>13</td>
+      <td>365</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>(euclidean, 1, 75, 3)</td>
+      <td>0.406</td>
+      <td>0.867</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>1</td>
+      <td>75</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>(cosine, 10, 490, 11)</td>
+      <td>0.406</td>
+      <td>0.867</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>10</td>
+      <td>490</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>(euclidean, 19, 155, 19)</td>
+      <td>0.312</td>
+      <td>0.267</td>
+      <td>0.353</td>
+      <td>euclidean</td>
+      <td>19</td>
+      <td>155</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>(cosine, 31, 85, 10)</td>
+      <td>0.281</td>
+      <td>0.600</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>31</td>
+      <td>85</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>(cosine, 13, 45, 15)</td>
+      <td>0.219</td>
+      <td>0.467</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>13</td>
+      <td>45</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>(cosine, 25, 255, 17)</td>
+      <td>0.188</td>
+      <td>0.400</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>25</td>
+      <td>255</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>(manhattan, 1, 150, 17)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>manhattan</td>
+      <td>1</td>
+      <td>150</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>(euclidean, 28, 365, 16)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>28</td>
+      <td>365</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>(cosine, 55, 460, 22)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>55</td>
+      <td>460</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>(cosine, 19, 185, 22)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>19</td>
+      <td>185</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>(cosine, 31, 10, 26)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>31</td>
+      <td>10</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>(cosine, 31, 400, 19)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>31</td>
+      <td>400</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>(euclidean, 25, 190, 16)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>25</td>
+      <td>190</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>(cosine, 58, 215, 21)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>58</td>
+      <td>215</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>(cityblock, 1, 260, 17)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cityblock</td>
+      <td>1</td>
+      <td>260</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>(euclidean, 43, 400, 14)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>43</td>
+      <td>400</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>(euclidean, 1, 295, 18)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>1</td>
+      <td>295</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(cosine, 13, 95, 19)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>13</td>
+      <td>95</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>(euclidean, 10, 480, 21)</td>
+      <td>0.125</td>
+      <td>0.267</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>10</td>
+      <td>480</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>(euclidean, 10, 220, 26)</td>
+      <td>0.125</td>
+      <td>0.267</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>10</td>
+      <td>220</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>(euclidean, 22, 455, 29)</td>
+      <td>0.125</td>
+      <td>0.267</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>22</td>
+      <td>455</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>(euclidean, 4, 455, 28)</td>
+      <td>0.094</td>
+      <td>0.200</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>4</td>
+      <td>455</td>
+      <td>28</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_pca_random_search</span><span class="o">.</span><span class="n">best_params_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n_neighbors&#39;: 2,
+ &#39;metric&#39;: &#39;cityblock&#39;,
+ &#39;n_components&#39;: 31,
+ &#39;threshold_dist&#39;: 415}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_pca_random_search</span><span class="o">.</span><span class="n">best_score_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3><strong>Estimation of future performance</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_facial_recognition_knn_pca</span> <span class="o">=</span> <span class="n">FacialRecognitionKnnPca</span><span class="p">()</span>
+<span class="n">best_facial_recognition_knn_pca</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="n">FR_knn_pca_random_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="n">best_facial_recognition_knn_pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_IN_train</span><span class="p">)</span>
+<span class="n">Y_test_hat</span> <span class="o">=</span> <span class="n">best_facial_recognition_knn_pca</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_test_hat</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h3><strong>Pre-trained algorithm</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Saving the pre-trained model:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_facial_recognition_knn_pca</span><span class="p">,</span> <span class="s2">&quot;facial_recognition_knn_pca.joblib&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;facial_recognition_knn_pca.joblib&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Loading the pre-trained model:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretrained_model</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;facial_recognition_knn_pca.joblib&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Loading new images:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">reshaped_image</span> <span class="o">=</span> <span class="n">X_new_1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reshaped_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3d69f52fd333f0bd4b582fcfa11d0f56fe104dfeeeb3bc0b62a86c77a2defc99.png" src="_images/3d69f52fd333f0bd4b582fcfa11d0f56fe104dfeeeb3bc0b62a86c77a2defc99.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_1_hat</span> <span class="o">=</span> <span class="n">pretrained_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new_1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">Y_new_1_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">reshaped_image</span> <span class="o">=</span> <span class="n">X_new_2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reshaped_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2a3c9866a8d358817dcde51ba80e5e1f79453f7b6817c00283e85ff4f4d14300.png" src="_images/2a3c9866a8d358817dcde51ba80e5e1f79453f7b6817c00283e85ff4f4d14300.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_2_hat</span> <span class="o">=</span> <span class="n">pretrained_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new_2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">Y_new_2_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="face-recognition-fisher-pca-kkn-algorithm">
+<h2><strong>Face Recognition - Fisher-PCA-KKN Algorithm</strong><a class="headerlink" href="#face-recognition-fisher-pca-kkn-algorithm" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3><strong>Testing the functionality of the algorithm</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facial_recognition_knn_pca_fisher</span> <span class="o">=</span> <span class="n">FacialRecognitionKnnPcaFisher</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">threshold_dist</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">facial_recognition_knn_pca_fisher</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_IN_train</span><span class="p">)</span>
+<span class="n">Y_val_hat</span> <span class="o">=</span> <span class="n">facial_recognition_knn_pca_fisher</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General accuracy</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.53125
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accuracy for IN images</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accuracy for OUT images</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_val_hat</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_val</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h3><strong>Hyperparameter tunning</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_grid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span><span class="s1">&#39;cityblock&#39;</span><span class="p">,</span><span class="s1">&#39;manhattan&#39;</span><span class="p">]</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;n_components&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;threshold_dist&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> 
+<span class="n">param_grid</span><span class="p">[</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="n">FR_knn_pca_fisher_random_search</span> <span class="o">=</span> <span class="n">RandomSearchFacialRecognitionKnnPcaFisher</span><span class="p">(</span><span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">FR_knn_pca_fisher_random_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="o">=</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="o">=</span><span class="n">Y_IN_train</span><span class="p">,</span> <span class="n">X_test</span><span class="o">=</span><span class="n">X_val</span><span class="p">,</span> <span class="n">Y_test</span><span class="o">=</span><span class="n">Y_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_pca_fisher_random_search</span><span class="o">.</span><span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>combination</th>
+      <th>accuracy</th>
+      <th>accuracy_IN</th>
+      <th>accuracy_OUT</th>
+      <th>metric</th>
+      <th>n_components</th>
+      <th>threshold_dist</th>
+      <th>n_neighbors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>35</th>
+      <td>(manhattan, 19, 85, 7)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>19</td>
+      <td>85</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>(cityblock, 10, 55, 4)</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>10</td>
+      <td>55</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>(cityblock, 31, 415, 2)</td>
+      <td>0.938</td>
+      <td>1.000</td>
+      <td>0.882</td>
+      <td>cityblock</td>
+      <td>31</td>
+      <td>415</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>(manhattan, 58, 210, 10)</td>
+      <td>0.875</td>
+      <td>0.733</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>58</td>
+      <td>210</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>(cityblock, 34, 415, 9)</td>
+      <td>0.844</td>
+      <td>1.000</td>
+      <td>0.706</td>
+      <td>cityblock</td>
+      <td>34</td>
+      <td>415</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>(euclidean, 28, 110, 11)</td>
+      <td>0.750</td>
+      <td>0.667</td>
+      <td>0.824</td>
+      <td>euclidean</td>
+      <td>28</td>
+      <td>110</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>(manhattan, 34, 205, 24)</td>
+      <td>0.688</td>
+      <td>0.333</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>34</td>
+      <td>205</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>(cityblock, 31, 350, 23)</td>
+      <td>0.656</td>
+      <td>0.267</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>31</td>
+      <td>350</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>(cityblock, 25, 230, 29)</td>
+      <td>0.625</td>
+      <td>0.200</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>25</td>
+      <td>230</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>(euclidean, 37, 100, 25)</td>
+      <td>0.625</td>
+      <td>0.267</td>
+      <td>0.941</td>
+      <td>euclidean</td>
+      <td>37</td>
+      <td>100</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>(manhattan, 58, 35, 28)</td>
+      <td>0.625</td>
+      <td>0.200</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>58</td>
+      <td>35</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>(manhattan, 28, 250, 28)</td>
+      <td>0.625</td>
+      <td>0.200</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>28</td>
+      <td>250</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>(manhattan, 10, 210, 26)</td>
+      <td>0.594</td>
+      <td>0.200</td>
+      <td>0.941</td>
+      <td>manhattan</td>
+      <td>10</td>
+      <td>210</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>(manhattan, 46, 395, 18)</td>
+      <td>0.562</td>
+      <td>0.333</td>
+      <td>0.765</td>
+      <td>manhattan</td>
+      <td>46</td>
+      <td>395</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>(manhattan, 52, 10, 12)</td>
+      <td>0.562</td>
+      <td>0.067</td>
+      <td>1.000</td>
+      <td>manhattan</td>
+      <td>52</td>
+      <td>10</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>(manhattan, 28, 460, 24)</td>
+      <td>0.562</td>
+      <td>0.267</td>
+      <td>0.824</td>
+      <td>manhattan</td>
+      <td>28</td>
+      <td>460</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>(cityblock, 43, 5, 29)</td>
+      <td>0.531</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>cityblock</td>
+      <td>43</td>
+      <td>5</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>(cosine, 7, 80, 5)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>7</td>
+      <td>80</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>(cosine, 31, 240, 8)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>31</td>
+      <td>240</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>(euclidean, 37, 425, 6)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>37</td>
+      <td>425</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>(euclidean, 43, 215, 8)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>43</td>
+      <td>215</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>(euclidean, 13, 345, 5)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>13</td>
+      <td>345</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>(euclidean, 34, 205, 7)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>34</td>
+      <td>205</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>(cosine, 43, 135, 3)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>43</td>
+      <td>135</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>(cosine, 49, 405, 7)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>49</td>
+      <td>405</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(euclidean, 22, 440, 4)</td>
+      <td>0.469</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>22</td>
+      <td>440</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>(cosine, 43, 65, 8)</td>
+      <td>0.438</td>
+      <td>0.933</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>43</td>
+      <td>65</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>(euclidean, 1, 75, 3)</td>
+      <td>0.406</td>
+      <td>0.867</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>1</td>
+      <td>75</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>(euclidean, 13, 365, 10)</td>
+      <td>0.312</td>
+      <td>0.667</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>13</td>
+      <td>365</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>(cosine, 10, 490, 11)</td>
+      <td>0.312</td>
+      <td>0.667</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>10</td>
+      <td>490</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>(cosine, 31, 85, 10)</td>
+      <td>0.312</td>
+      <td>0.667</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>31</td>
+      <td>85</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>(euclidean, 25, 190, 16)</td>
+      <td>0.250</td>
+      <td>0.533</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>25</td>
+      <td>190</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>(euclidean, 28, 365, 16)</td>
+      <td>0.219</td>
+      <td>0.467</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>28</td>
+      <td>365</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>(euclidean, 19, 155, 19)</td>
+      <td>0.188</td>
+      <td>0.333</td>
+      <td>0.059</td>
+      <td>euclidean</td>
+      <td>19</td>
+      <td>155</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>(cosine, 25, 255, 17)</td>
+      <td>0.188</td>
+      <td>0.400</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>25</td>
+      <td>255</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>(cosine, 13, 45, 15)</td>
+      <td>0.188</td>
+      <td>0.400</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>13</td>
+      <td>45</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>(cosine, 58, 215, 21)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>58</td>
+      <td>215</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>(euclidean, 1, 295, 18)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>1</td>
+      <td>295</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>(manhattan, 1, 150, 17)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>manhattan</td>
+      <td>1</td>
+      <td>150</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>(cosine, 31, 400, 19)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>31</td>
+      <td>400</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(cosine, 13, 95, 19)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>13</td>
+      <td>95</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>(cityblock, 1, 260, 17)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>cityblock</td>
+      <td>1</td>
+      <td>260</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>(euclidean, 43, 400, 14)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>43</td>
+      <td>400</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>(euclidean, 22, 455, 29)</td>
+      <td>0.156</td>
+      <td>0.333</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>22</td>
+      <td>455</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>(euclidean, 10, 480, 21)</td>
+      <td>0.125</td>
+      <td>0.267</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>10</td>
+      <td>480</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>(cosine, 31, 10, 26)</td>
+      <td>0.125</td>
+      <td>0.267</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>31</td>
+      <td>10</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>(euclidean, 10, 220, 26)</td>
+      <td>0.125</td>
+      <td>0.267</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>10</td>
+      <td>220</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>(cosine, 19, 185, 22)</td>
+      <td>0.125</td>
+      <td>0.267</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>19</td>
+      <td>185</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>(cosine, 55, 460, 22)</td>
+      <td>0.125</td>
+      <td>0.267</td>
+      <td>0.000</td>
+      <td>cosine</td>
+      <td>55</td>
+      <td>460</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>(euclidean, 4, 455, 28)</td>
+      <td>0.094</td>
+      <td>0.200</td>
+      <td>0.000</td>
+      <td>euclidean</td>
+      <td>4</td>
+      <td>455</td>
+      <td>28</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_pca_fisher_random_search</span><span class="o">.</span><span class="n">best_params_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n_neighbors&#39;: 7,
+ &#39;metric&#39;: &#39;manhattan&#39;,
+ &#39;n_components&#39;: 19,
+ &#39;threshold_dist&#39;: 85}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FR_knn_pca_fisher_random_search</span><span class="o">.</span><span class="n">best_score_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h3><strong>Estimation of future performance</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_facial_recognition_knn_pca_fisher</span> <span class="o">=</span> <span class="n">FacialRecognitionKnnPcaFisher</span><span class="p">()</span>
+<span class="n">best_facial_recognition_knn_pca_fisher</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="n">FR_knn_pca_fisher_random_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="n">best_facial_recognition_knn_pca_fisher</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_IN_train</span><span class="p">,</span> <span class="n">Y_IN_train</span><span class="p">)</span>
+<span class="n">Y_test_hat</span> <span class="o">=</span> <span class="n">best_facial_recognition_knn_pca_fisher</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">Y_test_hat</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8484848484848485
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h3><strong>Pre-trained algorithm</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Saving the pre-trained model:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_facial_recognition_knn_pca</span><span class="p">,</span> <span class="s2">&quot;facial_recognition_knn_pca_fisher.joblib&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;facial_recognition_knn_pca_fisher.joblib&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Loading the pre-trained model:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretrained_model</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;facial_recognition_knn_pca_fisher.joblib&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Loading new images:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">reshaped_image</span> <span class="o">=</span> <span class="n">X_new_1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reshaped_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3d69f52fd333f0bd4b582fcfa11d0f56fe104dfeeeb3bc0b62a86c77a2defc99.png" src="_images/3d69f52fd333f0bd4b582fcfa11d0f56fe104dfeeeb3bc0b62a86c77a2defc99.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_1_hat</span> <span class="o">=</span> <span class="n">pretrained_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new_1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">Y_new_1_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">reshaped_image</span> <span class="o">=</span> <span class="n">X_new_2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reshaped_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2a3c9866a8d358817dcde51ba80e5e1f79453f7b6817c00283e85ff4f4d14300.png" src="_images/2a3c9866a8d358817dcde51ba80e5e1f79453f7b6817c00283e85ff4f4d14300.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_new_2_hat</span> <span class="o">=</span> <span class="n">pretrained_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new_2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">Y_new_2_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements"><strong>Requirements</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data"><strong>Data</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images-of-people-of-our-database-in-people"><strong>Images of people of our database (IN people)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images-of-external-people-out-people"><strong>Images of external people (OUT people)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-validate-test-split"><strong>Train-Validate-Test split</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#face-recognition-kkn-algorithm"><strong>Face Recognition - KKN Algorithm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-functionality-of-the-algorithm"><strong>Testing the functionality of the algorithm</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tunning"><strong>Hyperparameter tunning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-of-future-performance"><strong>Estimation of future performance</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained-algorithm"><strong>Pre-trained algorithm</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#face-recognition-pca-kkn-algorithm"><strong>Face Recognition - PCA-KKN Algorithm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Testing the functionality of the algorithm</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Hyperparameter tunning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Estimation of future performance</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Pre-trained algorithm</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#face-recognition-fisher-pca-kkn-algorithm"><strong>Face Recognition - Fisher-PCA-KKN Algorithm</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Testing the functionality of the algorithm</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Hyperparameter tunning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>Estimation of future performance</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Pre-trained algorithm</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fabio Scielzo Ortiz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
